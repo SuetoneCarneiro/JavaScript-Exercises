@@ -1,18 +1,19 @@
 export class Exam {
-  constructor(weight, answer){
+  constructor(answer, weight){
     this.weight = weight
     this.answer = answer
     this.exams = []
   }
 
-  add(exam){ //NÃO FUNCIONA
+  add(exam){
     let grade = 0
-    for(let q in this.exams.values){
+    for(let q in this.answer.values){
       grade += (exam.values[q] === this.answer.values[q]) ? this.weight[q] : 0 // Operador ternáio estranho pra mim
     }
     exam.grade = grade // adicionando algo novo ao objeto
     this.exams.push(exam)
   }
+  
   avg(){
     let acc = 0
     for(let exam of this.exams){ // Vai usar em todas as outras funções
@@ -21,6 +22,7 @@ export class Exam {
     let avg = acc/this.exams.length
     return avg
   }
+
   min(){
     let min = 100000
     let res = []
@@ -32,6 +34,7 @@ export class Exam {
     res.push(min)
     return res
   }
+
   max(){
     let max = 0
     let res = []
@@ -47,6 +50,7 @@ export class Exam {
 
     return res
   }
+
   lt(comp){
     let array_res = []
     for(let exam of this.exams){
@@ -56,6 +60,7 @@ export class Exam {
     }
     return array_res
   }
+
   gt(comp){
     let array_res = []
     for(let exam of this.exams){
