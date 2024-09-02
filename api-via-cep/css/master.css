@@ -1,0 +1,51 @@
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: #fff;
+  padding: 30px;
+  width: 40%;
+  border-radius: 10px;
+}
+
+main form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main form input[type=text],
+main form #cepError {
+  width: 50%;
+}
+
+main form input {
+  margin: 10px 0;
+  padding: 10px;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.input-cep-error {
+  border: 1px solid #f00;
+  background: rgba(255, 0, 0, .1);
+}
+
+/* main form input[type=text]:nth-child(n+2) {
+  display: none;
+} */
+
+main form #cepError {
+  color: rgba(255, 0, 0, 0.68);
+  margin-top: -5px;
+}
